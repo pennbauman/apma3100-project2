@@ -1,0 +1,26 @@
+% Penn Bauman
+% pcb8gb@virginia.edu
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[top=1in,bottom=1.4in,left=1.25in,right=1.25in,centering,letterpaper]{geometry}
+\usepackage{latexsym}
+\usepackage[osf]{mathpazo}
+\usepackage{amsmath,amsfonts,graphicx}
+
+\author{Penn Bauman}
+\title{Package Distance Calculations}
+
+\begin{document}
+
+\section{Package Distance Calculations}
+
+\begin{align*}
+	F_X(x) &= 1 - e^{-\frac{1}{2}\alpha^2x^2} \\
+	1 - F &= e^{-\frac{1}{2}\alpha^2x^2} \\
+	\ln(1 - F) &= -\frac{1}{2}\alpha^2x^2 \\
+	x^2 &= -\frac{2 \ln(1 - F)}{\alpha^2} \\
+	x(F) &= \sqrt{-\frac{2 \ln(1 - F)}{\alpha^2}} \\
+\end{align*}
+
+\end{document}
