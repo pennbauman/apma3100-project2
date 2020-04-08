@@ -2,7 +2,7 @@
 # Group 7(2):
 #   Penn Bauman, David Hasani, Jennifer Long, Erick Tian
 
-class rand16bit:
+class rand18bit:
     x = []
     a = 24693
     c = 3967

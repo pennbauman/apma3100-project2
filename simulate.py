@@ -3,7 +3,7 @@
 #   Penn Bauman, David Hasani, Jennifer Long, Erick Tian
 
 from math import log, sqrt
-from rand16bit import rand16bit
+from rand18bit import rand18bit
 
 
 ### General variables (settings of simulation)
@@ -11,9 +11,10 @@ from rand16bit import rand16bit
 n_options = [10, 30, 50, 100, 150, 250, 500, 1000]
 # n_options = [10, 30]
 ## Output settings
-prints = 0
+prints = 1
     # 0 none
-    # 1 results
+    # 1 expectations
+    # 2 results
 
 
 
@@ -26,7 +27,7 @@ def distance(F):
 
 
 ### Generate table of random values
-rands = rand16bit()
+rands = rand18bit()
 
 # print(rands.getU(51))
 # print(rands.getU(52))
@@ -37,14 +38,15 @@ for n in n_options:
     results.write("trial, distance\n")
     print("Number: " + str(n))
     ## Iterate over number options
-    # count = 0
+    count = 0
     for i in range(n):
         ## Initialize trial
         x = distance(rands.nextU())
         results.write(str(i) + ", " + str(x) + "\n")
-        if (prints == 1):
+        if (prints == 2):
             print("x(" + str(i) + "): " + str(x))
-        # count += x
+        if (prints == 1):
+            count += x
 
     if (prints == 1):
         print("E[X] = " + str(count/n))
