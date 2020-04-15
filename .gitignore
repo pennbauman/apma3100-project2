@@ -1,6 +1,6 @@
 **~
 __pycache__
-results_n*.csv
+results*.csv
 *.aux
 *.fdb_latexmk
 *.fls
