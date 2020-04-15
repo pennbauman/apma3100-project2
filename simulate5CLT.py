@@ -18,7 +18,7 @@ M_n = []
 # 2.1) Transform the given sample M_n into Z_n
 a = 1/57
 mean = 1/a * sqrt(pi/2) # Need to check
-stdev = (4-pi)/(2a**2) # Need to check
+stdev = sqrt((4-pi)/(2a**2)) # Need to check
 
 def to_Z_n(n, m_n):
     return (m_n - mean)/(stdev/sqrt(n))
