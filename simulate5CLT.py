@@ -4,7 +4,7 @@
 #
 # Part 5: Central Limit Theorem
 
-from math import log, sqrt
+from math import log, sqrt, pi
 from rand18bit import rand18bit
 
 
@@ -16,8 +16,9 @@ n = [10, 30, 50, 100, 150, 250, 500, 1000]
 M_n = []
 
 # 2.1) Transform the given sample M_n into Z_n
-mean = 0 # Need to find
-stdev = 0 # Need to find
+a = 1/57
+mean = 1/a * sqrt(pi/2) # Need to check
+stdev = (4-pi)/(2a**2) # Need to check
 
 def to_Z_n(n, m_n):
     return (m_n - mean)/(stdev/sqrt(n))
