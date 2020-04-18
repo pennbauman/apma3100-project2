@@ -10,6 +10,7 @@ from rand18bit import rand18bit
 ## Number of simulations
 n_options = [10, 30, 50, 100, 150, 250, 500, 1000]
 # n_options = [10, 30]
+n_experiments = 110
 ## Output settings
 prints = 1
     # 0 none
@@ -33,22 +34,14 @@ rands = rand18bit()
 # print(rands.getU(52))
 # print(rands.getU(53))
 
+results = open("results.csv", "w")
 for n in n_options:
-    results = open("results_n{:04d}.csv".format(n), "w")
-    results.write("trial, distance\n")
-    print("Number: " + str(n))
-    ## Iterate over number options
-    count = 0
-    for i in range(n):
-        ## Initialize trial
-        x = distance(rands.nextU())
-        results.write(str(i) + ", " + str(x) + "\n")
-        if (prints == 2):
-            print("x(" + str(i) + "): " + str(x))
-        if (prints == 1):
-            count += x
+    line = str(n) + ", "
+    for e in range(n_experiments):
+        count = 0
+        for i in range(n):
+            count += distance(rands.nextU())
+        line += str(count/n) + ", "
+    results.write(line + "\n")
 
-    if (prints == 1):
-        print("E[X] = " + str(count/n))
-        print()
-
+# rands.print()
