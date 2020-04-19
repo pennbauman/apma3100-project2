@@ -72,6 +72,15 @@ for n, z_values in Z_n.items():
     F_n[n] = probs
 # print(F_n)
 
+##### Output values to CSV format
+with open('prob_data.csv', 'w') as outfile:
+    outfile.write('n,-1.4,-1.0,-0.5,0,0.5,1.0,1.4\n')
+    for n, f_values in F_n.items():
+        outfile.write(str(n) + ',')
+        for z_j, f in f_values.items():
+            outfile.write(str(f) + ',')
+        outfile.write('\n')
+
 
 ##### 2.3) Evaluate the goodness-of-fit of the standard normal CDF 𝛷 to the
 # empirical CDF 𝐹_𝑛 in terms of the maximum absolute difference MAD_n
